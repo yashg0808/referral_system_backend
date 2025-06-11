@@ -1,5 +1,13 @@
 const { Pool } = require('pg');
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+require('dotenv').config();
+
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'postgres',
+  password: 'mysecretpassword',
+  port: 5432,
+});
 
 module.exports = {
   getReferrer: async userId => {

@@ -19,6 +19,8 @@ async function handlePurchase(userId, amount, userSockets) {
         userSockets.get(level2).emit("earning_update", { from: userId, level: 2, amount: earning2 });
       }
     }
+    console.log("Referrer:", level1, "Second-level:", level2);
+    console.log("Sockets connected:", [...userSockets.keys()]);
   }
 }
 

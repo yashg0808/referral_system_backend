@@ -54,7 +54,7 @@ Run the following command in the terminal when you have installed docker to crea
 <pre> docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres </pre>
 A postgres container will be up, after pulling the POSTGRES image from DockerHub if not already present.
 
-## Connecting with PSQL in terminal, creating relations, and inserting dummy data
+## Connecting with PSQL client in terminal, creating relations, and inserting dummy data
 
 We will enter into PostgreSQL client using terminal to create the database.
 <pre>docker exec -it some-postgres psql -U postgres psql</pre>

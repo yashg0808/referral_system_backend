@@ -44,8 +44,8 @@ referral-system-backend/ <br />
 
 # Install dependencies and cloning the repository
 
-<pre>git clone 
-  npm install</pre>
+<pre>git clone https://github.com/yashg0808/referral_system_backend.git 
+npm install</pre>
 
 ## Setting up PostgreSQL Database using Docker
 

@@ -13,9 +13,9 @@ async function notifyViaWhatsApp(userPhoneNumber, amount, level, fromUserId) {
       from: process.env.TWILIO_WHATSAPP_NUMBER,
       to: `whatsapp:${userPhoneNumber}`
     });
-    console.log(`✅ WhatsApp notification sent to ${userPhoneNumber}`);
+    console.log(`WhatsApp notification sent to ${userPhoneNumber}`);
   } catch (err) {
-    console.error(`❌ Failed to send WhatsApp message to ${userPhoneNumber}`, err);
+    console.error(`Failed to send WhatsApp message to ${userPhoneNumber}`, err);
   }
 }
 

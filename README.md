@@ -40,6 +40,8 @@ referral-system-backend/ <br />
 ├── index.js # Server file (Express + Socket.IO) <br />
 ├── db.js # PostgreSQL DB connection & methods <br />
 ├── referralLogic.js # Referral payout logic <br />
+├── client.js # Connecting a client to the websocket to check real time updates <br />
+├── notifier.js # To send whatsapp notifications
 └── README.md # This file <br />
 
 # Install dependencies and cloning the repository
@@ -64,7 +66,8 @@ Run the following SQL script in your PostgreSQL client to create relations, and 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
-  referred_by INTEGER REFERENCES users(id)
+  referred_by INTEGER REFERENCES users(id),
+  phone_number TEXT
 );
 
 -- Purchases table
@@ -106,11 +109,25 @@ INSERT INTO users (id, referred_by) VALUES
 <pre>node index.js</pre>
 In another terminal, run the following command to check live earning updates using sockets:
 <pre>node client.js</pre>
-
-## Testing purchase API
 Make sure till now the PSQL database client is running, server is running, client.js is running to see updates.
-Now hit purchase API with post request using postman or curl at "http://localhost:3000/purchase", with request body: '{"userId": 4, "amount": 2000}'.
-You should see updates in server terminal (running index.js), and the terminal running client.js hearing websocket emit functions.
+
+# APIs
+1. POST &emsp;/api/purchase <br />
+
+   Trigger a purchase event for a user. This endpoint will:
+
+   * Record the purchase in the database.
+
+   * Calculate and distribute earnings to level 1 and 2 referrers.
+
+   * Emit real-time earnings updates via Socket.IO.
+
+   * Send WhatsApp notifications to level 1 and 2 referrers using **Twilio**.
+
+
+2. GET &emsp;/api/earnings/:userId <br />
+
+   Fetch a summary of earnings for a specific user, grouped by referral level.<br />
 
 ## Summary (Testing Tips)
 

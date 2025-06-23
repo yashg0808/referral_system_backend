@@ -95,7 +95,12 @@ INSERT INTO users (id, referred_by) VALUES
   (5, 1);          -- Referred by user 1
 
 </pre>
- Now we have created relations (tables) with some users in table 'users'.
+ Now we have created relations (tables) with some users in table 'users' with the following refferal relation:<br /><br />
+[1] <br />
+├── [2]&emsp;&emsp;&emsp;(referred by 1)<br />
+&nbsp;|&emsp;&emsp;├──[3]&emsp;(referred by 2)<br />
+&nbsp;|&emsp;&emsp;└──[4]&emsp;(referred by 2)<br />
+└── [5]&emsp;&emsp;&emsp;(referred by 1)<br />
 
 ## Starting the server
 <pre>node index.js</pre>

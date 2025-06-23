@@ -57,7 +57,7 @@ A postgres container will be up, after pulling the POSTGRES image from DockerHub
 ## Connecting with PSQL client in terminal, creating relations, and inserting dummy data
 
 We will enter into PostgreSQL client using terminal to create the database.
-<pre>docker exec -it some-postgres psql -U postgres psql</pre>
+<pre>docker exec -it some-postgres psql -U postgres</pre>
 You will enter into PostgreSQL client, "postgres=#" in terminal.
 Run the following SQL script in your PostgreSQL client to create relations, and insert dummy data:
 <pre>-- Users table

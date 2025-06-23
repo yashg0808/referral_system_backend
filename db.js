@@ -37,5 +37,11 @@ module.exports = {
       [userId]
     );
     return res.rows;
+  },
+
+  getPhoneNumber: async userId => {
+    const res = await pool.query('SELECT phone_number FROM users WHERE id = $1', [userId]);
+    return res.rows[0]?.phone_number || null;
   }
+
 };

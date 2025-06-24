@@ -1,4 +1,4 @@
-# 🎁 Referral System Backend
+# Referral System Backend
 
 A complete Node.js backend project implementing a **2-level referral system** using **PostgreSQL**, **Express**, and **Socket.IO**.
 
@@ -10,19 +10,19 @@ This system:
 
 ---
 
-## 📌 Features
+## Features
 
-✅ Real-time updates via Socket.IO  
-✅ 2-Level referral earnings:  
+Real-time updates via Socket.IO  
+2-Level referral earnings:  
 &nbsp;&nbsp;&nbsp;&nbsp;→ Level 1 gets 5%  
 &nbsp;&nbsp;&nbsp;&nbsp;→ Level 2 gets 1%  
-✅ PostgreSQL for relational user-referral tracking  
-✅ Modular codebase for extensibility  
-✅ API to simulate purchase and trigger earnings
+PostgreSQL for relational user-referral tracking  
+Modular codebase for extensibility  
+API to simulate purchase and trigger earnings
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 
 | Tech         | Role                         |
 |--------------|------------------------------|
@@ -34,7 +34,7 @@ This system:
 
 ---
 
-## 📂 Folder Structure
+## Folder Structure
 
 referral-system-backend/ <br />
 ├── index.js # Server file (Express + Socket.IO) <br />
